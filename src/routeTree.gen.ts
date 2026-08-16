@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as EventsIndexRouteImport } from './routes/events.index'
 import { Route as EventsSlugRouteImport } from './routes/events.$slug'
@@ -29,6 +30,11 @@ const AboutRoute = AboutRouteImport.update({
 const GalleryRoute = GalleryRouteImport.update({
   id: '/gallery',
   path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TeamRoute = TeamRouteImport.update({
@@ -51,6 +57,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/gallery': typeof GalleryRoute
+  '/resources': typeof ResourcesRoute
   '/team': typeof TeamRoute
   '/events/$slug': typeof EventsSlugRoute
   '/events/': typeof EventsIndexRoute
@@ -59,6 +66,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/gallery': typeof GalleryRoute
+  '/resources': typeof ResourcesRoute
   '/team': typeof TeamRoute
   '/events/$slug': typeof EventsSlugRoute
   '/events': typeof EventsIndexRoute
@@ -68,6 +76,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/gallery': typeof GalleryRoute
+  '/resources': typeof ResourcesRoute
   '/team': typeof TeamRoute
   '/events/$slug': typeof EventsSlugRoute
   '/events/': typeof EventsIndexRoute
@@ -75,14 +84,28 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/about' | '/gallery' | '/team' | '/events/$slug' | '/events/'
+    | '/'
+    | '/about'
+    | '/gallery'
+    | '/resources'
+    | '/team'
+    | '/events/$slug'
+    | '/events/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/gallery' | '/team' | '/events/$slug' | '/events'
+  to:
+    | '/'
+    | '/about'
+    | '/gallery'
+    | '/resources'
+    | '/team'
+    | '/events/$slug'
+    | '/events'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/gallery'
+    | '/resources'
     | '/team'
     | '/events/$slug'
     | '/events/'
@@ -92,6 +115,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   GalleryRoute: typeof GalleryRoute
+  ResourcesRoute: typeof ResourcesRoute
   TeamRoute: typeof TeamRoute
   EventsSlugRoute: typeof EventsSlugRoute
   EventsIndexRoute: typeof EventsIndexRoute
@@ -118,6 +142,13 @@ declare module '@tanstack/react-router' {
       path: '/gallery'
       fullPath: '/gallery'
       preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/team': {
@@ -148,6 +179,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   GalleryRoute: GalleryRoute,
+  ResourcesRoute: ResourcesRoute,
   TeamRoute: TeamRoute,
   EventsSlugRoute: EventsSlugRoute,
   EventsIndexRoute: EventsIndexRoute,
