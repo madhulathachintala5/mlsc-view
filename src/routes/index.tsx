@@ -1,24 +1,68 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import { EventCard } from "@/components/EventCard";
+import { Hero } from "@/components/Hero";
+import { Reveal, SectionHeading } from "@/components/Reveal";
+import { AboutSection } from "@/components/sections/AboutSection";
+import { ImpactTimeline } from "@/components/sections/ImpactTimeline";
+import { Button } from "@/components/ui/button";
+import { recentEvents } from "@/data/events";
+
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "MLSC @ VIEW — Learn. Build. Innovate." },
+      {
+        name: "description",
+        content:
+          "Official website of the Microsoft Learn Student Community at Vignan's Institute of Engineering for Women — events, team, resources and gallery.",
+      },
+      { property: "og:title", content: "MLSC @ VIEW — Learn. Build. Innovate." },
+      {
+        property: "og:description",
+        content:
+          "A student-driven technology community running coding contests, workshops and AI project expos.",
+      },
+    ],
+  }),
+  component: Home,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function Home() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <Hero />
+      <AboutSection />
+
+      <section className="section-y bg-surface">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
+          <SectionHeading
+            eyebrow="Events"
+            title="Our Recent Activities"
+            description="Competitions, workshops and expos organised by MLSC @ VIEW."
+          />
+
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {recentEvents.map((event, i) => (
+              <Reveal key={event.slug} delay={i * 0.06} className="h-full">
+                <EventCard event={event} />
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal className="mt-10 text-center">
+            <Button asChild variant="outline" className="rounded-full px-6">
+              <Link to="/events">
+                View All Events
+                <ArrowRight className="size-4" />
+              </Link>
+            </Button>
+          </Reveal>
+        </div>
+      </section>
+
+      <ImpactTimeline />
+    </>
   );
 }
