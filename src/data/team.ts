@@ -144,12 +144,6 @@ export const teamGroups: TeamGroup[] = [
         linkedin: "https://www.linkedin.com/in/uma-poojitha-pericherla-9a2239421",
         github: "https://github.com/umapoojitha1009",
       },
-      {
-        name: "Tanushka Dannina",
-        role: "LinkedIn Lead",
-        email: "tanushkadannina542@gmail.com",
-        linkedin: "https://www.linkedin.com/in/tanushka-dannina-54a54142a",
-      },
     ],
   },
   {
