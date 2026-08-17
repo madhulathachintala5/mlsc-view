@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Linkedin, User } from "lucide-react";
+import { Github, Linkedin, Mail, User } from "lucide-react";
+
 
 import type { TeamMember } from "@/data/team";
 import { cn } from "@/lib/utils";
