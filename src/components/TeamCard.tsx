@@ -49,18 +49,45 @@ export function TeamCard({
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{member.bio}</p>
       )}
 
-      {member.linkedin && (
-        <a
-          href={member.linkedin}
-          target="_blank"
-          rel="noreferrer noopener"
-          aria-label={`${member.name} on LinkedIn`}
-          className="mt-4 inline-flex items-center gap-2 rounded-full border border-border px-3 py-1.5 text-xs font-medium transition-colors hover:bg-secondary"
-        >
-          <Linkedin className="size-3.5" aria-hidden="true" />
-          LinkedIn
-        </a>
+      {(member.linkedin || member.github || member.email) && (
+        <div className="mt-4 flex items-center gap-2">
+          {member.linkedin && (
+            <a
+              href={member.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${member.name} on LinkedIn`}
+              title="LinkedIn"
+              className="inline-flex size-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:bg-secondary hover:text-primary"
+            >
+              <Linkedin className="size-4" aria-hidden="true" />
+            </a>
+          )}
+          {member.github && (
+            <a
+              href={member.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${member.name} on GitHub`}
+              title="GitHub"
+              className="inline-flex size-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:bg-secondary hover:text-primary"
+            >
+              <Github className="size-4" aria-hidden="true" />
+            </a>
+          )}
+          {member.email && (
+            <a
+              href={`mailto:${member.email}`}
+              aria-label={`Email ${member.name}`}
+              title={member.email}
+              className="inline-flex size-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:bg-secondary hover:text-primary"
+            >
+              <Mail className="size-4" aria-hidden="true" />
+            </a>
+          )}
+        </div>
       )}
+
     </motion.article>
   );
 }
