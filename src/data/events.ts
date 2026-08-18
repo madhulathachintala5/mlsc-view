@@ -1,3 +1,14 @@
+import badge1Asset from "@/assets/events/photo1-2.jpeg.asset.json";
+import badge2Asset from "@/assets/events/photo2-2.jpeg.asset.json";
+import badge3Asset from "@/assets/events/photo3-2.jpeg.asset.json";
+import badge4Asset from "@/assets/events/photo4-2.jpeg.asset.json";
+import gitgo1Asset from "@/assets/events/photo1.jpeg.asset.json";
+import gitgo2Asset from "@/assets/events/photo2.jpeg.asset.json";
+import gitgo3Asset from "@/assets/events/photo3.jpeg.asset.json";
+import gitgo4Asset from "@/assets/events/photo4.jpeg.asset.json";
+import gitgo5Asset from "@/assets/events/photo5.jpeg.asset.json";
+import gitgoPosterAsset from "@/assets/events/poster.jpeg.asset.json";
+
 export type EventCategory =
   | "Coding"
   | "Competition"
@@ -102,9 +113,13 @@ export const events: MlscEvent[] = [
       "An official MLSC recognition event where club members received their community badges.",
     description:
       "An official MLSC recognition event where club members received their community badges.",
-    gallery: [],
-    galleryNote:
-      "The 3 badge distribution photographs, including the group photo used as the cover, will appear here once added to the project.",
+    cover: badge1Asset.url,
+    gallery: [
+      { src: badge1Asset.url, alt: "MLSC @ VIEW club members and faculty group photo at the badge distribution ceremony" },
+      { src: badge2Asset.url, alt: "Faculty pinning an MLSC badge on a club member on stage" },
+      { src: badge3Asset.url, alt: "MLSC members applauding on stage during the badge distribution ceremony" },
+      { src: badge4Asset.url, alt: "A club member receiving her MLSC badge from faculty" },
+    ],
   },
   {
     slug: "first-year-workshop",
@@ -151,9 +166,16 @@ export const events: MlscEvent[] = [
       { label: "Team size", value: "2–4 members" },
       { label: "Participation fee", value: "₹20 per head" },
     ],
-    gallery: [],
-    galleryNote:
-      "The official Git & Go poster and 5 event photographs will appear here once the image files are added to the project.",
+    poster: gitgoPosterAsset.url,
+    cover: gitgoPosterAsset.url,
+    gallery: [
+      { src: gitgoPosterAsset.url, alt: "Official Git & Go contest poster" },
+      { src: gitgo5Asset.url, alt: "Session on GitHub fundamentals and collaborative development during Git & Go" },
+      { src: gitgo1Asset.url, alt: "Ribbon-cutting inauguration of the Git & Go contest" },
+      { src: gitgo2Asset.url, alt: "Participants working at the computer lab during the Git & Go contest" },
+      { src: gitgo3Asset.url, alt: "Team collaborating around a workstation during the Git & Go contest" },
+      { src: gitgo4Asset.url, alt: "Wide view of the lab filled with Git & Go contest participants" },
+    ],
   },
   {
     slug: "coding-contest-techritz-2k25",
