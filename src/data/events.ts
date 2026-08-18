@@ -6,6 +6,11 @@ import expo4Asset from "@/assets/events/photo4-3.jpeg.asset.json";
 import expo5Asset from "@/assets/events/photo5-2.jpeg.asset.json";
 import expo6Asset from "@/assets/events/photo6.jpeg.asset.json";
 import expo7Asset from "@/assets/events/photo7.jpeg.asset.json";
+import ws1Asset from "@/assets/events/photo1-4.jpeg.asset.json";
+import ws2Asset from "@/assets/events/photo2-4.jpeg.asset.json";
+import ws3Asset from "@/assets/events/photo3-4.jpeg.asset.json";
+import ws4Asset from "@/assets/events/photo4-4.jpeg.asset.json";
+import ws5Asset from "@/assets/events/photo5-3.jpeg.asset.json";
 import badge1Asset from "@/assets/events/photo1-2.jpeg.asset.json";
 import badge2Asset from "@/assets/events/photo2-2.jpeg.asset.json";
 import badge3Asset from "@/assets/events/photo3-2.jpeg.asset.json";
@@ -149,9 +154,14 @@ export const events: MlscEvent[] = [
       "An introductory workshop helping first-year students begin exploring Microsoft tools and the wider technology ecosystem.",
     description:
       "An introductory workshop designed to introduce first-year students to various Microsoft tools and technologies and help them begin exploring the technology ecosystem.",
-    gallery: [],
-    galleryNote:
-      "The 5 workshop photographs will appear here once the image files are added to the project.",
+    cover: ws1Asset.url,
+    gallery: [
+      { src: ws1Asset.url, alt: "MLSC members introducing Microsoft PowerPoint to first-year students" },
+      { src: ws2Asset.url, alt: "Session on GitHub during the first-year workshop" },
+      { src: ws3Asset.url, alt: "Microsoft Word session for first-year students" },
+      { src: ws4Asset.url, alt: "Students attending an interactive session during the workshop" },
+      { src: ws5Asset.url, alt: "Debug Arena session at the first-year workshop" },
+    ],
   },
   {
     slug: "git-and-go-contest",
