@@ -1,3 +1,11 @@
+import expoPosterAsset from "@/assets/events/poster-2.jpeg.asset.json";
+import expo1Asset from "@/assets/events/photo1-3.jpeg.asset.json";
+import expo2Asset from "@/assets/events/photo2-3.jpeg.asset.json";
+import expo3Asset from "@/assets/events/photo3-3.jpeg.asset.json";
+import expo4Asset from "@/assets/events/photo4-3.jpeg.asset.json";
+import expo5Asset from "@/assets/events/photo5-2.jpeg.asset.json";
+import expo6Asset from "@/assets/events/photo6.jpeg.asset.json";
+import expo7Asset from "@/assets/events/photo7.jpeg.asset.json";
 import badge1Asset from "@/assets/events/photo1-2.jpeg.asset.json";
 import badge2Asset from "@/assets/events/photo2-2.jpeg.asset.json";
 import badge3Asset from "@/assets/events/photo3-2.jpeg.asset.json";
@@ -97,9 +105,17 @@ export const events: MlscEvent[] = [
       { label: "Team size", value: "3–5 members" },
       { label: "Participation fee", value: "₹20 per head" },
     ],
-    gallery: [],
-    galleryNote:
-      "The official AI Project Expo poster and 8 event photographs will appear here once the image files are added to the project.",
+    cover: expoPosterAsset.url,
+    gallery: [
+      { src: expoPosterAsset.url, alt: "Official AI Project Expo poster by MLSC @ VIEW" },
+      { src: expo1Asset.url, alt: "Judges reviewing a student team's AI project during the qualifying round" },
+      { src: expo2Asset.url, alt: "Student team presenting their AI project on a laptop to an evaluator" },
+      { src: expo3Asset.url, alt: "Students demonstrating their project to judges in the classroom" },
+      { src: expo4Asset.url, alt: "A team explaining their AI project to faculty evaluators" },
+      { src: expo5Asset.url, alt: "Group photograph of AI Project Expo participants and faculty" },
+      { src: expo6Asset.url, alt: "Faculty observing project demonstrations during the expo round" },
+      { src: expo7Asset.url, alt: "Students presenting their project to a faculty evaluator at the expo" },
+    ],
   },
   {
     slug: "club-members-badge-distribution",
