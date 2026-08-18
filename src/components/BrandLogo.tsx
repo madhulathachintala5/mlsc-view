@@ -1,3 +1,4 @@
+import mlscLogoAsset from "@/assets/team/mlsc-logo.jpeg.asset.json";
 import { cn } from "@/lib/utils";
 
 /**
@@ -10,7 +11,7 @@ import { cn } from "@/lib/utils";
  * Until then a neutral, branded geometric mark is rendered (never a
  * redesigned or AI-generated version of the real logo).
  */
-export const logoSrc: string | undefined = undefined;
+export const logoSrc: string | undefined = mlscLogoAsset.url;
 
 export function BrandLogo({
   className,

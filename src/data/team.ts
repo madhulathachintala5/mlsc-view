@@ -8,6 +8,9 @@ import madhuLathaAsset from "@/assets/team/madhu-latha.jpeg.asset.json";
 import mahimaAsset from "@/assets/team/mahima.jpeg.asset.json";
 import nagamaniAsset from "@/assets/team/nagamani.jpeg.asset.json";
 import rojaAsset from "@/assets/team/roja.jpeg.asset.json";
+import sophiyaAsset from "@/assets/team/sophiya-tabassum.jpeg.asset.json";
+import tanushkaAsset from "@/assets/team/tanushka.jpeg.asset.json";
+import tejaswiniAsset from "@/assets/team/Tejaswini.jpeg.asset.json";
 
 export type TeamMember = {
   name: string;
@@ -30,6 +33,7 @@ export type TeamGroup = {
 export const coordinator: TeamMember = {
   name: "Mrs. N. Tejaswini",
   role: "Club Coordinator",
+  photo: tejaswiniAsset.url,
 };
 
 export const ambassadors: TeamGroup = {
@@ -41,6 +45,7 @@ export const ambassadors: TeamGroup = {
     {
       name: "Sophiya Tabassum",
       role: "Lead",
+      photo: sophiyaAsset.url,
       email: "sophieeee1910@gmail.com",
       linkedin: "https://www.linkedin.com/in/sophiya-tabassum-a8372833a/",
       github: "https://github.com/Sophiya-swiftie",
@@ -184,6 +189,13 @@ export const teamGroups: TeamGroup[] = [
         name: "V. Hansika",
         role: "Assistant Social Media Manager",
         photo: hansikaAsset.url,
+      },
+      {
+        name: "Tanushka Dannina",
+        role: "LinkedIn Lead",
+        photo: tanushkaAsset.url,
+        email: "tanushkadannina542@gmail.com",
+        linkedin: "https://www.linkedin.com/in/tanushka-dannina-54a54142a/",
       },
     ],
   },
