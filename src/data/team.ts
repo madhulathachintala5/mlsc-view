@@ -185,6 +185,13 @@ export const teamGroups: TeamGroup[] = [
         role: "Assistant Social Media Manager",
         photo: hansikaAsset.url,
       },
+      {
+        name: "Tanushka Dannina",
+        role: "LinkedIn Lead",
+        photo: tanushkaAsset.url,
+        email: "tanushkadannina542@gmail.com",
+        linkedin: "https://www.linkedin.com/in/tanushka-dannina-54a54142a/",
+      },
     ],
   },
 ];
