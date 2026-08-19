@@ -32,7 +32,10 @@ export function EventCard({ event }: { event: MlscEvent }) {
           </span>
         </div>
 
-        <h3 className="mt-2 text-lg font-semibold">{event.title}</h3>
+        <h3 className="mt-2 text-lg font-semibold tracking-tight">{event.title}</h3>
+        {event.context && (
+          <p className="mt-0.5 text-sm font-medium text-primary">{event.context}</p>
+        )}
         <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted-foreground">
           {event.summary}
         </p>

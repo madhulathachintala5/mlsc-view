@@ -7,6 +7,7 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/mlsc-view-81468a385/",
   instagram: "https://www.instagram.com/mlsc_view/",
   instagramHandle: "@mlsc_view",
+  whatsappCommunity: "https://chat.whatsapp.com/DPSF7Ul4jX1Fp1RXXaW0Xc",
 };
 
 export const navLinks = [

@@ -76,7 +76,13 @@ export function Hero() {
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="rounded-full px-6">
-              <Link to="/join">Join Our Community</Link>
+              <a
+                href={site.whatsappCommunity}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Join Our Community
+              </a>
             </Button>
           </motion.div>
         </div>
