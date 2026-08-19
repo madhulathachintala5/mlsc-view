@@ -8,7 +8,7 @@ import hasiniAsset from "@/assets/team/hasini-2.jpeg.asset.json";
 import jyoshnaAsset from "@/assets/team/jyoshna.jpeg.asset.json";
 import kiranmaiAsset from "@/assets/team/kiranmai.jpeg.asset.json";
 import laasyaAsset from "@/assets/team/laasya.jpeg.asset.json";
-import madhuLathaAsset from "@/assets/team/madhu-latha-2.jpeg.asset.json";
+import madhuLathaAsset from "@/assets/team/madhu-latha-3.jpeg.asset.json";
 import mahimaAsset from "@/assets/team/mahima.jpeg.asset.json";
 import nagamaniAsset from "@/assets/team/nagamani-2.jpeg.asset.json";
 import poojithaAsset from "@/assets/team/poojitha.jpeg.asset.json";
