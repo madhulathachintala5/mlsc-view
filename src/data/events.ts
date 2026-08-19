@@ -297,7 +297,7 @@ export function getEvent(slug: string): MlscEvent | undefined {
 export const recentEvents = events.slice(0, 4);
 
 export const timeline = [
-  { period: "Techritz 2K25", title: "Coding Contest", slug: "coding-contest-techritz-2k25" },
+  { period: "October 2025", title: "Coding Contest", slug: "coding-contest-techritz-2k25" },
   { period: "June 2026", title: "Git & Go Contest", slug: "git-and-go-contest" },
   { period: "July 2026", title: "First-Year Workshop", slug: "first-year-workshop" },
   { period: "August 2026", title: "AI Project Expo", slug: "ai-project-expo" },

@@ -63,11 +63,26 @@ function EventDetails() {
       </Link>
 
       <Reveal className="mt-6">
-        <div className="overflow-hidden rounded-3xl border border-border shadow-soft">
-          <div className="aspect-16/9 w-full">
-            <EventCover event={event} />
+        {event.poster ? (
+          <figure className="overflow-hidden rounded-3xl border border-border bg-surface p-4 shadow-soft sm:p-6">
+            <img
+              src={event.poster}
+              alt={`Official ${event.title} poster — MLSC @ VIEW`}
+              className="mx-auto max-h-[70vh] w-full rounded-2xl object-contain"
+            />
+            {event.registrationNote && (
+              <figcaption className="mt-4 text-center text-sm text-muted-foreground">
+                {event.registrationNote}
+              </figcaption>
+            )}
+          </figure>
+        ) : (
+          <div className="overflow-hidden rounded-3xl border border-border shadow-soft">
+            <div className="aspect-16/9 w-full">
+              <EventCover event={event} />
+            </div>
           </div>
-        </div>
+        )}
       </Reveal>
 
       <Reveal className="mt-8">
