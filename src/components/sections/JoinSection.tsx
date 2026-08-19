@@ -6,6 +6,7 @@ import { Reveal } from "@/components/Reveal";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { site } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 const years = ["1st Year", "2nd Year", "3rd Year", "4th Year"];
@@ -83,6 +84,17 @@ export function JoinSection() {
                 Learn new technologies, build projects, collaborate with peers, participate in
                 technical activities, and grow as a technology leader with MLSC.
               </p>
+              <div className="relative mt-6 flex justify-center">
+                <Button asChild size="lg" variant="secondary" className="rounded-full px-7">
+                  <a
+                    href={site.whatsappCommunity}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Join Our Community
+                  </a>
+                </Button>
+              </div>
             </div>
 
             <div className="bg-card p-6 text-card-foreground sm:p-10">
