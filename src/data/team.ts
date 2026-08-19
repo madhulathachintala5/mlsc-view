@@ -1,13 +1,19 @@
+import akshayaAsset from "@/assets/team/akshaya.jpeg.asset.json";
+import bhavyaAsset from "@/assets/team/bhavya.jpeg.asset.json";
+import durgaAsset from "@/assets/team/durga.jpeg.asset.json";
 import hansikaAsset from "@/assets/team/hansika.jpeg.asset.json";
 import harshithaCAsset from "@/assets/team/harshitha-c.jpeg.asset.json";
 import harshithaAsset from "@/assets/team/harshitha.jpeg.asset.json";
-import hasiniAsset from "@/assets/team/hasini.jpeg.asset.json";
+import hasiniAsset from "@/assets/team/hasini-2.jpeg.asset.json";
+import jyoshnaAsset from "@/assets/team/jyoshna.jpeg.asset.json";
 import kiranmaiAsset from "@/assets/team/kiranmai.jpeg.asset.json";
 import laasyaAsset from "@/assets/team/laasya.jpeg.asset.json";
-import madhuLathaAsset from "@/assets/team/madhu-latha.jpeg.asset.json";
+import madhuLathaAsset from "@/assets/team/madhu-latha-2.jpeg.asset.json";
 import mahimaAsset from "@/assets/team/mahima.jpeg.asset.json";
-import nagamaniAsset from "@/assets/team/nagamani.jpeg.asset.json";
+import nagamaniAsset from "@/assets/team/nagamani-2.jpeg.asset.json";
+import poojithaAsset from "@/assets/team/poojitha.jpeg.asset.json";
 import rojaAsset from "@/assets/team/roja.jpeg.asset.json";
+import saranyaAsset from "@/assets/team/saranya-lahari-2.jpeg.asset.json";
 import sophiyaAsset from "@/assets/team/sophiya-tabassum.jpeg.asset.json";
 import tanushkaAsset from "@/assets/team/tanushka.jpeg.asset.json";
 import tejaswiniAsset from "@/assets/team/Tejaswini.jpeg.asset.json";
@@ -88,6 +94,7 @@ export const teamGroups: TeamGroup[] = [
       {
         name: "S. Bhavya",
         role: "GitHub Lead",
+        photo: bhavyaAsset.url,
         email: "Bhavyasimhachalam3004@gmail.com",
         linkedin:
           "https://www.linkedin.com/in/bhavya-simhachalam-5157bb340?utm_source=share_via&utm_content=profile&utm_medium=member_android",
@@ -96,6 +103,7 @@ export const teamGroups: TeamGroup[] = [
       {
         name: "S. Jyoshna",
         role: "Azure Lead",
+        photo: jyoshnaAsset.url,
         email: "jyoshnasilaparasitti@gmail.com",
         linkedin: "https://www.linkedin.com/in/silaparasitti-jyoshna-3a227133a",
         github: "https://github.com/jyoshnas059",
@@ -111,6 +119,7 @@ export const teamGroups: TeamGroup[] = [
       {
         name: "G. Phani Akshaya",
         role: "Documentation Lead",
+        photo: akshayaAsset.url,
         email: "ganthakuraakshaya@gmail.com",
       },
     ],
@@ -138,6 +147,7 @@ export const teamGroups: TeamGroup[] = [
       {
         name: "G. Durga",
         role: "Design Manager",
+        photo: durgaAsset.url,
         email: "gurujadurga@gmail.com",
         linkedin: "https://www.linkedin.com/in/durga-guruja-702242341",
         github: "https://github.com/gurujadurga-creator",
@@ -145,6 +155,7 @@ export const teamGroups: TeamGroup[] = [
       {
         name: "P. Uma Poojitha",
         role: "Event Manager",
+        photo: poojithaAsset.url,
         email: "umapoojitha1009@gmail.com",
         linkedin: "https://www.linkedin.com/in/uma-poojitha-pericherla-9a2239421",
         github: "https://github.com/umapoojitha1009",
@@ -181,6 +192,7 @@ export const teamGroups: TeamGroup[] = [
       {
         name: "P. V. Saranya Lahari",
         role: "Assistant Design Manager",
+        photo: saranyaAsset.url,
         email: "saranyalaharipuvvala@gmail.com",
         linkedin: "https://www.linkedin.com/in/saranya-puvvala-39352542a",
         github: "https://github.com/saranyalaharipuvvala07",
