@@ -94,6 +94,7 @@ export const teamGroups: TeamGroup[] = [
       {
         name: "S. Bhavya",
         role: "GitHub Lead",
+        photo: bhavyaAsset.url,
         email: "Bhavyasimhachalam3004@gmail.com",
         linkedin:
           "https://www.linkedin.com/in/bhavya-simhachalam-5157bb340?utm_source=share_via&utm_content=profile&utm_medium=member_android",
@@ -102,6 +103,7 @@ export const teamGroups: TeamGroup[] = [
       {
         name: "S. Jyoshna",
         role: "Azure Lead",
+        photo: jyoshnaAsset.url,
         email: "jyoshnasilaparasitti@gmail.com",
         linkedin: "https://www.linkedin.com/in/silaparasitti-jyoshna-3a227133a",
         github: "https://github.com/jyoshnas059",
@@ -117,6 +119,7 @@ export const teamGroups: TeamGroup[] = [
       {
         name: "G. Phani Akshaya",
         role: "Documentation Lead",
+        photo: akshayaAsset.url,
         email: "ganthakuraakshaya@gmail.com",
       },
     ],
@@ -144,6 +147,7 @@ export const teamGroups: TeamGroup[] = [
       {
         name: "G. Durga",
         role: "Design Manager",
+        photo: durgaAsset.url,
         email: "gurujadurga@gmail.com",
         linkedin: "https://www.linkedin.com/in/durga-guruja-702242341",
         github: "https://github.com/gurujadurga-creator",
@@ -151,6 +155,7 @@ export const teamGroups: TeamGroup[] = [
       {
         name: "P. Uma Poojitha",
         role: "Event Manager",
+        photo: poojithaAsset.url,
         email: "umapoojitha1009@gmail.com",
         linkedin: "https://www.linkedin.com/in/uma-poojitha-pericherla-9a2239421",
         github: "https://github.com/umapoojitha1009",
@@ -187,6 +192,7 @@ export const teamGroups: TeamGroup[] = [
       {
         name: "P. V. Saranya Lahari",
         role: "Assistant Design Manager",
+        photo: saranyaAsset.url,
         email: "saranyalaharipuvvala@gmail.com",
         linkedin: "https://www.linkedin.com/in/saranya-puvvala-39352542a",
         github: "https://github.com/saranyalaharipuvvala07",
