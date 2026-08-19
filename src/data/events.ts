@@ -21,6 +21,7 @@ import gitgo3Asset from "@/assets/events/photo3.jpeg.asset.json";
 import gitgo4Asset from "@/assets/events/photo4.jpeg.asset.json";
 import gitgo5Asset from "@/assets/events/photo5.jpeg.asset.json";
 import gitgoPosterAsset from "@/assets/events/poster.jpeg.asset.json";
+import codingPosterAsset from "@/assets/events/coding-contest-poster.jpeg.asset.json";
 
 export type EventCategory =
   | "Coding"
@@ -59,6 +60,7 @@ export type MlscEvent = {
   facts?: { label: string; value: string }[];
   gallery: EventPhoto[];
   galleryNote?: string;
+  registrationNote?: string;
 };
 
 export const events: MlscEvent[] = [
@@ -205,18 +207,27 @@ export const events: MlscEvent[] = [
   },
   {
     slug: "coding-contest-techritz-2k25",
-    title: "Coding Contest — Techritz 2K25",
+    title: "Coding Contest",
     category: "Coding",
-    date: "Techritz 2K25",
-    sortKey: "2025-01-01",
-    venue: "Vignan's Institute of Engineering for Women",
-    organizer: "MLSC",
+    date: "10th – 11th October 2025",
+    sortKey: "2025-10-11",
+    venue: "Offline at Vignan's Institute of Engineering for Women",
+    organizer: "Microsoft Learn Student Community (MLSC)",
     context: "Techritz 2K25",
     summary:
-      "A three-round coding competition designed to evaluate participants across different levels of programming ability.",
+      "A national-level women-focused coding contest conducted as part of Techritz 2K25.",
     description:
-      "A three-round coding competition designed to evaluate participants across different levels of programming ability.",
+      "Welcome to the Coding Contest organized by the Microsoft Learn Student Community (MLSC) of the CSE Department as a part of Techritz 2K25 – A National-level Women TechFest happening on 10th – 11th October 2025.",
     details: [
+      {
+        heading: "Event Details",
+        items: [
+          "Eligibility: Exclusively for Girls (Women Participants Only) 👩‍💻",
+          "Mode: Offline at Vignan's Institute of Engineering for Women",
+          "Registration Fee: ₹50/- per person",
+          "Date: 10th – 11th October 2025",
+        ],
+      },
       {
         heading: "Rounds",
         items: [
@@ -225,9 +236,30 @@ export const events: MlscEvent[] = [
           "Round 3 — focused on time, accuracy and problem-solving ability.",
         ],
       },
+      {
+        heading: "Prizes & Rewards",
+        items: [
+          "🏆 Top 3 Winners will get CodeChef Pro subscription for FREE 🎁",
+          "🏅 Many more exciting prizes for the winners!",
+        ],
+      },
     ],
-    gallery: [],
-    galleryNote: "No photographs were captured for this event.",
+    facts: [
+      { label: "Eligibility", value: "Women participants only" },
+      { label: "Mode", value: "Offline — VIEW campus" },
+      { label: "Registration fee", value: "₹50/- per person" },
+      { label: "Organized by", value: "MLSC, Dept. of CSE" },
+    ],
+    poster: codingPosterAsset.url,
+    cover: codingPosterAsset.url,
+    registrationNote:
+      "Make sure to register through the given QR code / form before the deadline.",
+    gallery: [
+      {
+        src: codingPosterAsset.url,
+        alt: "Official Coding Contest poster for Techritz 2K25 with registration QR code",
+      },
+    ],
   },
 ];
 
