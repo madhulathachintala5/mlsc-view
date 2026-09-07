@@ -6,6 +6,7 @@ import { Hero } from "@/components/Hero";
 import { Reveal, SectionHeading } from "@/components/Reveal";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ImpactTimeline } from "@/components/sections/ImpactTimeline";
+import { NewsSection } from "@/components/sections/NewsSection";
 import { Button } from "@/components/ui/button";
 import { recentEvents } from "@/data/events";
 
@@ -62,7 +63,9 @@ function Home() {
         </div>
       </section>
 
+      <NewsSection />
       <ImpactTimeline />
+
     </>
   );
 }
