@@ -1,6 +1,3 @@
-# Roadmap
-
-- [x] Replace homepage News & Updates with shared Upcoming Events content.
-- [x] Add featured and secondary upcoming events to the Events page.
-- [x] Update Varre Hansika, Tamada Mahima, and Boda Nagamani by matching existing profiles.
-- [x] Verify desktop and mobile layouts, links, unique records, routes, and build health.
+Open tasks:
+- Update Coding Contest 2K26 – TechRitz across Homepage, Events page, and detail page.
+- Verify dates, fee, CodeChef collaboration, prizes, benefits, countdown, navigation, responsiveness, and no duplicates.
