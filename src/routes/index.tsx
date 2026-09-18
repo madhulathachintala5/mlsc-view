@@ -6,7 +6,7 @@ import { Hero } from "@/components/Hero";
 import { Reveal, SectionHeading } from "@/components/Reveal";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ImpactTimeline } from "@/components/sections/ImpactTimeline";
-import { NewsSection } from "@/components/sections/NewsSection";
+import { UpcomingEventsSection } from "@/components/sections/UpcomingEventsSection";
 import { Button } from "@/components/ui/button";
 import { recentEvents } from "@/data/events";
 
@@ -25,6 +25,8 @@ export const Route = createFileRoute("/")({
         content:
           "A student-driven technology community running coding contests, workshops and AI project expos.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Home,
@@ -63,7 +65,7 @@ function Home() {
         </div>
       </section>
 
-      <NewsSection />
+      <UpcomingEventsSection />
       <ImpactTimeline />
 
     </>

@@ -20,6 +20,8 @@ export const Route = createFileRoute("/team")({
         property: "og:description",
         content: "The students and faculty leading the Microsoft Learn Student Community.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: TeamPage,
