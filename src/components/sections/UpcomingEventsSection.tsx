@@ -65,6 +65,19 @@ function EventAction({ event, featured = false }: { event: UpcomingEvent; featur
   );
 }
 
+function RegistrationAction({ event }: { event: UpcomingEvent }) {
+  if (!event.registrationUrl) return null;
+
+  return (
+    <Button asChild size="sm" className="rounded-full">
+      <a href={event.registrationUrl} target="_blank" rel="noopener noreferrer">
+        Register
+        <ArrowRight className="size-4" />
+      </a>
+    </Button>
+  );
+}
+
 export function FeaturedUpcomingEvent({ event }: { event: UpcomingEvent }) {
   return (
     <motion.article
@@ -93,8 +106,9 @@ export function FeaturedUpcomingEvent({ event }: { event: UpcomingEvent }) {
           <p className="mt-5 max-w-2xl text-sm leading-relaxed text-navy-foreground/80 sm:text-base">
             {event.description}
           </p>
-          <div className="mt-7">
+          <div className="mt-7 flex flex-wrap gap-3">
             <EventAction event={event} featured />
+            <RegistrationAction event={event} />
           </div>
         </div>
 
@@ -127,8 +141,9 @@ export function UpcomingEventCard({ event }: { event: UpcomingEvent }) {
       <p className="mt-5 text-xs font-semibold text-primary uppercase">{event.category}</p>
       <h3 className="mt-1 text-xl font-semibold">{event.title}</h3>
       <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{event.description}</p>
-      <div className="mt-6">
+      <div className="mt-6 flex flex-wrap gap-3">
         <EventAction event={event} />
+        <RegistrationAction event={event} />
       </div>
     </motion.article>
   );

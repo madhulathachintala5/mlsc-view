@@ -5,12 +5,17 @@ import { EventCard } from "@/components/EventCard";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
 import {
+  FeaturedUpcomingEvent,
+  UpcomingEventCard,
+} from "@/components/sections/UpcomingEventsSection";
+import {
   eventCategories,
   events,
   matchesFilter,
   type EventFilter,
 } from "@/data/events";
 import { cn } from "@/lib/utils";
+import { featuredUpcomingEvent, otherUpcomingEvents } from "@/data/upcoming-events";
 
 export const Route = createFileRoute("/events/")({
   head: () => ({
@@ -43,11 +48,45 @@ function EventsPage() {
         description="Every MLSC @ VIEW event — competitions, workshops, expos and community activities."
       />
 
+      <section id="upcoming-events" className="border-b border-border bg-surface">
+        <div className="mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 md:py-20">
+          <Reveal>
+            <p className="text-sm font-semibold text-primary">Coming next</p>
+            <h2 className="mt-2 text-3xl font-bold sm:text-4xl">Upcoming Events</h2>
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+              Discover upcoming MLSC competitions, hackathons, workshops, and technical activities.
+            </p>
+          </Reveal>
+
+          {featuredUpcomingEvent && (
+            <Reveal className="mt-10">
+              <FeaturedUpcomingEvent event={featuredUpcomingEvent} />
+            </Reveal>
+          )}
+
+          {otherUpcomingEvents.length > 0 && (
+            <div className="mt-6 grid gap-6 sm:grid-cols-2">
+              {otherUpcomingEvents.map((event, index) => (
+                <Reveal key={event.id} delay={index * 0.06} className="h-full">
+                  <UpcomingEventCard event={event} />
+                </Reveal>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
       <section className="mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 md:py-20">
+        <Reveal>
+          <h2 className="text-3xl font-bold sm:text-4xl">Past Events</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+            Explore competitions, workshops, expos, and community activities organized by MLSC @ VIEW.
+          </p>
+        </Reveal>
         <div
           role="group"
           aria-label="Filter events by category"
-          className="flex flex-wrap gap-2"
+          className="mt-8 flex flex-wrap gap-2"
         >
           {eventCategories.map((category) => (
             <button

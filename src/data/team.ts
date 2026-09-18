@@ -143,6 +143,8 @@ export const teamGroups: TeamGroup[] = [
         role: "Design Manager",
         photo: mahimaAsset.url,
         email: "tamadamahima44@gmail.com",
+        linkedin: "https://www.linkedin.com/in/mahima-tamada-671801340",
+        github: "https://github.com/mahima44-svg",
       },
       {
         name: "G. Durga",
@@ -198,9 +200,12 @@ export const teamGroups: TeamGroup[] = [
         github: "https://github.com/saranyalaharipuvvala07",
       },
       {
-        name: "V. Hansika",
+        name: "Varre Hansika",
         role: "Assistant Social Media Manager",
         photo: hansikaAsset.url,
+        email: "hansikanaidu10@gmail.com",
+        linkedin: "https://www.linkedin.com/in/varre-hansika-156a52381",
+        github: "https://github.com/hansikanaidu10-ctrl",
       },
       {
         name: "Tanushka Dannina",
