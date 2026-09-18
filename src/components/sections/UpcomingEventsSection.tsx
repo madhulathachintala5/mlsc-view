@@ -58,9 +58,11 @@ function EventAction({ event, featured = false }: { event: UpcomingEvent; featur
   }
 
   return (
-    <Button variant="outline" size="sm" className="rounded-full" disabled>
-      View Details
-      <ArrowRight className="size-4" />
+    <Button asChild variant="outline" size="sm" className="rounded-full">
+      <Link to="/events" hash={event.id}>
+        View Details
+        <ArrowRight className="size-4" />
+      </Link>
     </Button>
   );
 }
@@ -81,6 +83,7 @@ function RegistrationAction({ event }: { event: UpcomingEvent }) {
 export function FeaturedUpcomingEvent({ event }: { event: UpcomingEvent }) {
   return (
     <motion.article
+      id={event.id}
       whileHover={{ y: -4 }}
       transition={{ type: "spring", stiffness: 300, damping: 26 }}
       className="group relative overflow-hidden rounded-3xl bg-brand text-navy-foreground shadow-lift"

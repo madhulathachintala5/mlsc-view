@@ -31,6 +31,8 @@ export const Route = createFileRoute("/events/")({
         property: "og:description",
         content: "Explore all events organised by the Microsoft Learn Student Community.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: EventsPage,

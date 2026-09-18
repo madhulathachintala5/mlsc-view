@@ -25,6 +25,8 @@ export const Route = createFileRoute("/")({
         content:
           "A student-driven technology community running coding contests, workshops and AI project expos.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Home,
