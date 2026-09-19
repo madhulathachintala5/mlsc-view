@@ -18,6 +18,7 @@ import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as EventsIndexRouteImport } from './routes/events.index'
 import { Route as EventsSlugRouteImport } from './routes/events.$slug'
+import { Route as EventsTechritz2k26RouteImport } from './routes/events.techritz-2k26'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -64,6 +65,11 @@ const EventsSlugRoute = EventsSlugRouteImport.update({
   path: '/events/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EventsTechritz2k26Route = EventsTechritz2k26RouteImport.update({
+  id: '/events/techritz-2k26',
+  path: '/events/techritz-2k26',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -74,6 +80,7 @@ export interface FileRoutesByFullPath {
   '/resources': typeof ResourcesRoute
   '/team': typeof TeamRoute
   '/events/$slug': typeof EventsSlugRoute
+  '/events/techritz-2k26': typeof EventsTechritz2k26Route
   '/events/': typeof EventsIndexRoute
 }
 export interface FileRoutesByTo {
@@ -85,6 +92,7 @@ export interface FileRoutesByTo {
   '/resources': typeof ResourcesRoute
   '/team': typeof TeamRoute
   '/events/$slug': typeof EventsSlugRoute
+  '/events/techritz-2k26': typeof EventsTechritz2k26Route
   '/events': typeof EventsIndexRoute
 }
 export interface FileRoutesById {
@@ -97,6 +105,7 @@ export interface FileRoutesById {
   '/resources': typeof ResourcesRoute
   '/team': typeof TeamRoute
   '/events/$slug': typeof EventsSlugRoute
+  '/events/techritz-2k26': typeof EventsTechritz2k26Route
   '/events/': typeof EventsIndexRoute
 }
 export interface FileRouteTypes {
@@ -110,6 +119,7 @@ export interface FileRouteTypes {
     | '/resources'
     | '/team'
     | '/events/$slug'
+    | '/events/techritz-2k26'
     | '/events/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -121,6 +131,7 @@ export interface FileRouteTypes {
     | '/resources'
     | '/team'
     | '/events/$slug'
+    | '/events/techritz-2k26'
     | '/events'
   id:
     | '__root__'
@@ -132,6 +143,7 @@ export interface FileRouteTypes {
     | '/resources'
     | '/team'
     | '/events/$slug'
+    | '/events/techritz-2k26'
     | '/events/'
   fileRoutesById: FileRoutesById
 }
@@ -144,6 +156,7 @@ export interface RootRouteChildren {
   ResourcesRoute: typeof ResourcesRoute
   TeamRoute: typeof TeamRoute
   EventsSlugRoute: typeof EventsSlugRoute
+  EventsTechritz2k26Route: typeof EventsTechritz2k26Route
   EventsIndexRoute: typeof EventsIndexRoute
 }
 
@@ -212,6 +225,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EventsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/events/techritz-2k26': {
+      id: '/events/techritz-2k26'
+      path: '/events/techritz-2k26'
+      fullPath: '/events/techritz-2k26'
+      preLoaderRoute: typeof EventsTechritz2k26RouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -224,6 +244,7 @@ const rootRouteChildren: RootRouteChildren = {
   ResourcesRoute: ResourcesRoute,
   TeamRoute: TeamRoute,
   EventsSlugRoute: EventsSlugRoute,
+  EventsTechritz2k26Route: EventsTechritz2k26Route,
   EventsIndexRoute: EventsIndexRoute,
 }
 export const routeTree = rootRouteImport

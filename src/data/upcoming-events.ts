@@ -12,6 +12,14 @@ export type UpcomingEvent = {
   detailsUrl?: string;
   registrationUrl?: string;
   featured?: boolean;
+  shortDescription?: string;
+  date?: string;
+  eventStart?: string;
+  organizer?: string;
+  collaboration?: string;
+  registrationFee?: string;
+  prizes?: { place: string; reward: string }[];
+  participantBenefit?: string;
 };
 
 export const upcomingEvents: UpcomingEvent[] = [
@@ -22,8 +30,22 @@ export const upcomingEvents: UpcomingEvent[] = [
     status: "Coming Soon",
     tagline: "Think. Code. Compete. Conquer.",
     highlight: "Something BIG is cooking at MLSC! 🔥",
+    shortDescription:
+      "Test your programming skills, sharpen your problem-solving abilities, and compete with fellow coders.",
     description:
-      "Get ready for Coding Contest 2K26 – TechRitz, an exciting coding competition organized by MLSC. Challenge your problem-solving skills, compete with fellow coders, and showcase your programming abilities.",
+      "Get ready for Coding Contest 2K26 – TechRitz, organized by MLSC in collaboration with CodeChef. Test your programming skills, sharpen your problem-solving abilities, and compete with fellow coders in an exciting coding competition. Challenge your logic, improve your coding skills, and showcase your programming abilities. Something BIG is cooking at MLSC! 🔥",
+    date: "October 15 & 16, 2026",
+    eventStart: "2026-10-15T00:00:00+05:30",
+    organizer: "Microsoft Learn Student Community (MLSC)",
+    collaboration: "CodeChef",
+    registrationFee: "₹50",
+    prizes: [
+      { place: "1st Place", reward: "CodeChef Pro" },
+      { place: "2nd Place", reward: "CodeChef Pro" },
+      { place: "3rd Place", reward: "CodeChef Pro" },
+    ],
+    participantBenefit: "50% OFF on CodeChef Pro",
+    detailsUrl: "/events/techritz-2k26",
     featured: true,
   },
   {
@@ -37,3 +59,7 @@ export const upcomingEvents: UpcomingEvent[] = [
 
 export const featuredUpcomingEvent = upcomingEvents.find((event) => event.featured);
 export const otherUpcomingEvents = upcomingEvents.filter((event) => !event.featured);
+
+export function getUpcomingEvent(id: string): UpcomingEvent | undefined {
+  return upcomingEvents.find((event) => event.id === id);
+}
