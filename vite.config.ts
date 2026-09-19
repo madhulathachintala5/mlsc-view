@@ -26,4 +26,7 @@ export default defineConfig({
       failOnError: false,
     },
   },
+  // For the GitHub Pages build, use a Node server bundle so every page can be
+  // prerendered to static HTML during the build.
+  ...(process.env.GH_PAGES === "true" ? { nitro: { preset: "node-server" } } : {}),
 });
