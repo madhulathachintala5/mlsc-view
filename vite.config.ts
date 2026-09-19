@@ -20,4 +20,11 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  nitro: {
+    // GitHub Pages is static-only: prerender every page to plain HTML.
+    prerender: {
+      crawlLinks: true,
+      routes: ["/"],
+    },
+  },
 });
