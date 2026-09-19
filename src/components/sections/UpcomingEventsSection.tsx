@@ -1,6 +1,17 @@
 import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { ArrowRight, Code2, Cpu, Sparkles, Terminal } from "lucide-react";
+import {
+  ArrowRight,
+  CalendarDays,
+  Code2,
+  Cpu,
+  Gift,
+  Handshake,
+  IndianRupee,
+  Sparkles,
+  Terminal,
+  Trophy,
+} from "lucide-react";
 
 import { Reveal, SectionHeading } from "@/components/Reveal";
 import { Button } from "@/components/ui/button";
@@ -35,10 +46,21 @@ function StatusBadge({ status, inverted = false }: { status: UpcomingEvent["stat
 function EventAction({ event, featured = false }: { event: UpcomingEvent; featured?: boolean }) {
   const detailsUrl = event.detailsUrl;
 
+  if (detailsUrl === "/events/techritz-2k26") {
+    return (
+      <Button asChild variant={featured ? "secondary" : "outline"} className="rounded-full">
+        <Link to="/events/techritz-2k26">
+          {featured ? "Explore TechRitz 2K26" : "View Details"}
+          <ArrowRight className="size-4" />
+        </Link>
+      </Button>
+    );
+  }
+
   if (detailsUrl) {
     return (
       <Button asChild variant={featured ? "secondary" : "outline"} className="rounded-full">
-        <a href={detailsUrl} target={detailsUrl.startsWith("http") ? "_blank" : undefined} rel={detailsUrl.startsWith("http") ? "noopener noreferrer" : undefined}>
+        <a href={detailsUrl} target="_blank" rel="noopener noreferrer">
           {featured ? "Explore Event" : "View Details"}
           <ArrowRight className="size-4" />
         </a>
@@ -107,8 +129,31 @@ export function FeaturedUpcomingEvent({ event }: { event: UpcomingEvent }) {
             <p className="mt-3 text-base font-semibold text-navy-foreground sm:text-lg">{event.tagline}</p>
           )}
           <p className="mt-5 max-w-2xl text-sm leading-relaxed text-navy-foreground/80 sm:text-base">
-            {event.description}
+            {event.shortDescription ?? event.description}
           </p>
+          {(event.date || event.collaboration || event.registrationFee) && (
+            <div className="mt-6 grid gap-3 sm:grid-cols-3">
+              {event.date && <EventFact icon={CalendarDays} label="Date" value={event.date} />}
+              {event.collaboration && <EventFact icon={Handshake} label="In collaboration with" value={event.collaboration} />}
+              {event.registrationFee && <EventFact icon={IndianRupee} label="Registration fee" value={event.registrationFee} />}
+            </div>
+          )}
+          {(event.prizes || event.participantBenefit) && (
+            <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-navy-foreground">
+              {event.prizes && (
+                <span className="inline-flex items-center gap-2">
+                  <Trophy className="size-4 text-ms-yellow" aria-hidden="true" />
+                  Top 3 Winners: CodeChef Pro
+                </span>
+              )}
+              {event.participantBenefit && (
+                <span className="inline-flex items-center gap-2">
+                  <Gift className="size-4 text-ms-green" aria-hidden="true" />
+                  All Participants: {event.participantBenefit}
+                </span>
+              )}
+            </div>
+          )}
           <div className="mt-7 flex flex-wrap gap-3">
             <EventAction event={event} featured />
             <RegistrationAction event={event} />
@@ -125,6 +170,18 @@ export function FeaturedUpcomingEvent({ event }: { event: UpcomingEvent }) {
         </div>
       </div>
     </motion.article>
+  );
+}
+
+function EventFact({ icon: Icon, label, value }: { icon: typeof CalendarDays; label: string; value: string }) {
+  return (
+    <div className="flex items-start gap-3 rounded-xl border border-navy-foreground/15 bg-navy-foreground/8 p-3">
+      <Icon className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
+      <div>
+        <p className="text-xs text-navy-foreground/65">{label}</p>
+        <p className="mt-0.5 text-sm font-semibold">{value}</p>
+      </div>
+    </div>
   );
 }
 
