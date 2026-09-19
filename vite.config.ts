@@ -6,10 +6,29 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+// Base path for GitHub Pages deployment at https://madhulathachintala5.github.io/mlsc-view/
+// The GH_PAGES flag is only set by the GitHub Actions workflow, so local dev
+// and the Lovable preview keep working at the root path.
+const ghPages = process.env.GH_PAGES === "true";
+const base = ghPages ? "/mlsc-view/" : "/";
+
 export default defineConfig({
+  vite: {
+    base,
+  },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
+    // GitHub Pages is static-only: prerender every page to plain HTML.
+    // Only enabled for the GH_PAGES build so normal Lovable builds are unaffected.
+    prerender: {
+      enabled: ghPages,
+      crawlLinks: true,
+      failOnError: false,
+    },
   },
+  // For the GitHub Pages build, use a Node server bundle so pages can be
+  // prerendered to static HTML during the build (output: .output/public).
+  ...(ghPages ? { nitro: { preset: "node-server" } } : {}),
 });
