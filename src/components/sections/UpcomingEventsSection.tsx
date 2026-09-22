@@ -165,7 +165,8 @@ export function FeaturedUpcomingEvent({ event }: { event: UpcomingEvent }) {
               alt={`${event.title} official poster`}
               width={1536}
               height={1024}
-              loading="lazy"
+              loading="eager"
+              decoding="async"
               className="h-auto w-full object-contain"
             />
           </div>
