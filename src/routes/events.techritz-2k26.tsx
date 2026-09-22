@@ -5,7 +5,6 @@ import {
   CalendarDays,
   CheckCircle2,
   Clock3,
-  Code2,
   Gift,
   Handshake,
   IndianRupee,
@@ -92,16 +91,17 @@ function TechRitzDetailsPage() {
             <Reveal delay={0.08}>
               <motion.div
                 whileHover={{ y: -4 }}
-                className="relative mx-auto flex aspect-square w-full max-w-md items-center justify-center overflow-hidden rounded-3xl border border-navy-foreground/15 bg-navy-foreground/8 shadow-glass"
+                className="relative mx-auto flex w-full max-w-2xl items-center justify-center overflow-hidden rounded-3xl border border-navy-foreground/15 bg-navy-foreground/8 p-2 shadow-glass"
               >
-                <div className="grid-backdrop absolute inset-0" aria-hidden="true" />
-                <div className="relative text-center">
-                  <div className="mx-auto flex size-28 items-center justify-center rounded-full border border-navy-foreground/20 bg-navy-foreground/10">
-                    <Code2 className="size-14" strokeWidth={1.4} aria-hidden="true" />
-                  </div>
-                  <p className="mt-6 text-xs font-semibold uppercase">MLSC × CodeChef</p>
-                  <p className="mt-2 text-2xl font-bold">Think. Code. Compete.</p>
-                </div>
+                {event.image && (
+                  <img
+                    src={event.image}
+                    alt={`${event.title} official poster`}
+                    width={1536}
+                    height={1024}
+                    className="h-auto w-full object-contain"
+                  />
+                )}
               </motion.div>
             </Reveal>
           </div>
@@ -185,9 +185,30 @@ function TechRitzDetailsPage() {
                   <span className="inline-flex items-center gap-2"><Clock3 className="size-4 text-primary" /> {event.status}</span>
                 </div>
               </div>
-              <div className="text-left lg:text-right">
-                <Button disabled size="lg" className="rounded-full px-7">Register Now</Button>
-                <p className="mt-3 text-sm font-medium text-muted-foreground">Registration Opening Soon</p>
+              <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center lg:justify-end">
+                {event.registrationQr && (
+                  <a href={event.registrationUrl} target="_blank" rel="noopener noreferrer" aria-label="Open TechRitz 2K26 registration form">
+                    <img
+                      src={event.registrationQr}
+                      alt="TechRitz 2K26 registration QR code"
+                      width={168}
+                      height={178}
+                      className="h-auto w-32 object-contain sm:w-36"
+                    />
+                  </a>
+                )}
+                <div className="text-left lg:text-right">
+                  {event.registrationUrl ? (
+                    <Button asChild size="lg" className="rounded-full px-7">
+                      <a href={event.registrationUrl} target="_blank" rel="noopener noreferrer">Register Now</a>
+                    </Button>
+                  ) : (
+                    <Button disabled size="lg" className="rounded-full px-7">Register Now</Button>
+                  )}
+                  <p className="mt-3 text-sm font-medium text-muted-foreground">
+                    {event.registrationUrl ? "Scan the QR code or register online" : "Registration Opening Soon"}
+                  </p>
+                </div>
               </div>
             </div>
           </section>

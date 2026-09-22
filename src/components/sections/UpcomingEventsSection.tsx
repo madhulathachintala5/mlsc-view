@@ -3,13 +3,11 @@ import { motion } from "framer-motion";
 import {
   ArrowRight,
   CalendarDays,
-  Code2,
   Cpu,
   Gift,
   Handshake,
   IndianRupee,
   Sparkles,
-  Terminal,
   Trophy,
 } from "lucide-react";
 
@@ -160,14 +158,19 @@ export function FeaturedUpcomingEvent({ event }: { event: UpcomingEvent }) {
           </div>
         </div>
 
-        <div className="relative hidden min-h-105 items-center justify-center overflow-hidden border-l border-navy-foreground/15 lg:flex" aria-hidden="true">
-          <div className="absolute inset-10 rounded-2xl border border-navy-foreground/15 bg-navy-foreground/5" />
-          <div className="relative flex size-52 items-center justify-center rounded-full border border-navy-foreground/20 bg-navy-foreground/10 shadow-glass">
-            <Code2 className="size-24" strokeWidth={1.35} />
+        {event.image && (
+          <div className="relative flex items-center justify-center overflow-hidden border-t border-navy-foreground/15 p-4 sm:p-6 lg:min-h-105 lg:border-t-0 lg:border-l" aria-label={`${event.title} poster`}>
+            <img
+              src={event.image}
+              alt={`${event.title} official poster`}
+              width={1536}
+              height={1024}
+              loading="eager"
+              decoding="async"
+              className="h-auto w-full object-contain"
+            />
           </div>
-          <Terminal className="absolute top-16 right-14 size-9 text-navy-foreground/45" />
-          <Cpu className="absolute bottom-16 left-14 size-9 text-navy-foreground/45" />
-        </div>
+        )}
       </div>
     </motion.article>
   );
