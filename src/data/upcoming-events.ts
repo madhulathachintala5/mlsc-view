@@ -9,6 +9,7 @@ export type UpcomingEvent = {
   tagline?: string;
   highlight?: string;
   image?: string;
+  registrationQr?: string;
   detailsUrl?: string;
   registrationUrl?: string;
   featured?: boolean;
@@ -45,7 +46,10 @@ export const upcomingEvents: UpcomingEvent[] = [
       { place: "3rd Place", reward: "CodeChef Pro" },
     ],
     participantBenefit: "50% OFF on CodeChef Pro",
+    image: `${import.meta.env.BASE_URL}assets/events/techritz-2k26-poster.jpeg`,
+    registrationQr: `${import.meta.env.BASE_URL}assets/events/techritz-2k26-registration-qr.png`,
     detailsUrl: "/events/techritz-2k26",
+    registrationUrl: "https://forms.gle/qn5JvYXuiA1GxWee8",
     featured: true,
   },
   {
